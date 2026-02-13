@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Flexbox в CSS3</title>
+        <style>
+          div {vertical-align: baseline;}
+	  *{box-sizing: border-box;}
+            html, body {
+                padding: 0;
+                margin: 0;
+            body {
+                color: #000;
+                display: flex;
+                flex-direction: column;
+            } 
+
+            main {
+                display: flex;
+                flex-direction: column;
+            } 
+            article {
+                padding: 10px 10px 10px 10px;
+                background-color: rgb(244, 146, 146);
+                flex: 2 2 12em;
+            } 
+            nav, aside {
+               flex: 1;
+	       padding: 10px 10px 10px 10px;
+               background-color: rgb(179, 240, 179);
+            } 
+            nav {
+                order: -1;
+            }             
+            header {flex: 0 0 5em;
+                background-color: #fff; 
+	    }
+            footer {
+                flex: 0 0 3em;
+                background-color: rgb(206, 244, 146);
+                text-align: center;
+            }
+	    header h1 {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: bold;
+                padding: 30px 30px 30px 10px;
+                clear: both;
+                text-align: center;
+                text-shadow: 5px 4px 3px #666;
+             }    
+            nav0 {background-color: rgb(157, 203, 234);
+                border-top: 1px solid #888;
+                border-bottom: 1px solid #888;
+                }
+            nav0 ul:after {content: " ";
+                display: table;
+                clear: both;
+                }
+            nav0 li {float: left;
+                list-style: none;   
+                }
+            nav0 a {display: block;
+                color: black;
+                padding: 10px 25px;
+                text-decoration: none;
+                border-right: 3px solid rgb(1, 25, 68);
+                font-size: xx-large;
+                }
+            nav0 li:last-child a {border-right: none; 
+                }         
+            @media screen and (min-width: 600px) {
+                 
+                body{
+                    min-height: 100vh;
+                }
+                main {
+                    flex-direction: row;
+                    min-height: 100%;
+                    flex: 1 1 auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Картинная галерея Кукина</h1>
+        </header>
+        <nav0>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="about.html">Об авторе</a></li>
+            </ul>
+        </nav0>
+        <main>
+            <article>
+                <p>Это основной блок</p>
+                <p>Это основной блок</p>
+                <p>Это основной блок</p>
+                <p>Это основной блок</p>
+                <p>Это основной блок</p>
+                <p>Это основной блок</p>
+            </article>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="about.html">Об авторе</a></li>
+                </ul>
+            </nav>
+            <aside>
+                <p>Правый сайдбар c новостями о работе и выставках Кукина</p>
+            </aside>
+        </main>
+        <footer>
+            <p>Это подвал с копирайтом</p>
+        </footer>
+    </body>
+</html>
